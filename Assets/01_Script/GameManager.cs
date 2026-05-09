@@ -9,8 +9,19 @@ public class PlayerData{
 }
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public PlayerData data;
-    public void Awake(){
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     public void Save(){
         File.WriteAllText(Path.Combine(Path.GetTempPath(),"save"),JsonUtility.ToJson(data));
