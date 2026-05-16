@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        for(int i = 0; i < data.resources.Length; i++)
+        {
+            data.resources[i] = 0;
+        }
     }
     public void Save(){
         File.WriteAllText(Path.Combine(Path.GetTempPath(),"save"),JsonUtility.ToJson(data));
@@ -32,4 +36,4 @@ public class GameManager : MonoBehaviour
         data = JsonUtility.FromJson<PlayerData>(rawsave);
         Debug.Log($"loaded context = {rawsave}");
     }
-}
+} 
