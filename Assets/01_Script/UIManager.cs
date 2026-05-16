@@ -25,8 +25,18 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        for(int i = 0; i < craftTableData.materials.Length; i++)
+        {
+            Debug.Log($"material {i} = {craftTableData.materials[i].name}");
+            UpdateMaterialByIndex(i);
+        }
+    }
     public void UpdateMaterialByIndex(int index)
     {
+        Debug.Log(craftTableData.materials[index].transform.GetChild(0).name);
+        Debug.Log(craftTableData.materials[index].transform.GetChild(0).GetChild(0).name);
         craftTableData.materials[index].transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text = GameManager.instance.data.resources[index].ToString();
     }
     public void UpdateCraftTableUI(int index)
@@ -53,6 +63,5 @@ public class UIManager : MonoBehaviour
             craftTableData.tableMaterials[1].transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 0);
             craftTableData.tableMaterials[2].transform.GetChild(2).gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 0);
         }
-
     }
 }
