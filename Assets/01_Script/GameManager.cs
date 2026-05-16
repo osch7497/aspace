@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        for(int i = 0; i < data.resources.Length; i++)
+        {
+            data.resources[i] = 20;
+        }
     }
     public void Save(){
         File.WriteAllText(Path.Combine(Path.GetTempPath(),"save"),JsonUtility.ToJson(data));
