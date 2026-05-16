@@ -32,4 +32,9 @@ public class GameManager : MonoBehaviour
         data = JsonUtility.FromJson<PlayerData>(rawsave);
         Debug.Log($"loaded context = {rawsave}");
     }
+    public void GatherResource(int[] PlayerResources) {
+        for (int i = 0; i < 11; i++){
+            data.resources[i] += PlayerResources[i];
+        }
+    }
 }
