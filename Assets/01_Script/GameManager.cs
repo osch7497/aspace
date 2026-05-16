@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         }
         for(int i = 0; i < data.resources.Length; i++)
         {
-            data.resources[i] = 0;
+            data.resources[i] = 20;
         }
     }
     public void Save(){
