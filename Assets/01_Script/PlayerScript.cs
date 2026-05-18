@@ -55,7 +55,7 @@ public class PlayerScript : MonoBehaviour
             ItemUI.transform.position = Camera.main.WorldToScreenPoint(ray.collider.transform.position + Vector3.up);
             if (Input.GetKeyDown(KeyCode.E)){
                 ItemPickUpScript ips = ray.collider.GetComponent<ItemPickUpScript>();
-                BagPackResource[ips.ResourceIndex] += (int)Random.Range(ips.ResourcePickUpRange.x, ips.ResourcePickUpRange.y);
+                BagPackResource[ips.ResourceIndex] += ips.gather();
                 Debug.Log($"resource {ips.ResourceIndex}+");
             }
         }
