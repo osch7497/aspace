@@ -46,14 +46,14 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
-        for(int i = 0; i < craftTableData.materials.Length; i++)
-        {
-            UpdateMaterialByIndex(i);
-        }
+        UpdateMaterial();
+        UpdateItem();
         craftTableData.tableMaterials[0].transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text = "";
         craftTableData.tableMaterials[1].transform.GetChild(1).gameObject.GetComponent<Text>().text = "";
         craftTableData.tableMaterials[2].transform.GetChild(1).gameObject.GetComponent<Text>().text = "";
-
+        itemTableData.hugeIcon.transform.GetChild(0).GetComponent<Text>().text = "";
+        itemTableData.itemMaterials[0].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "";
+        itemTableData.itemMaterials[1].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = "";
     }
     public void UpdateMaterialByIndex(int index)
     {
@@ -103,10 +103,22 @@ public class UIManager : MonoBehaviour
         itemTableData.hugeIcon.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         itemTableData.itemMaterials[0].transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
         itemTableData.itemMaterials[1].transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        itemTableData.hugeIcon.GetComponent<Image>().sprite = itemTableData.items[index].transform.GetChild(1).GetComponent<Image>().sprite;
-        itemTableData.itemMaterials[0].transform.GetChild(1).GetComponent<Image>().sprite = itemTableData.eachItemMaterials[index].firstMaterial.GetComponent<Image>().sprite;
-        itemTableData.itemMaterials[0].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = GameManager.instance.data.resources[itemTableData.eachItemMaterials[index].firstMaterialIndex].ToString();
-        itemTableData.itemMaterials[1].transform.GetChild(1).GetComponent<Image>().sprite = itemTableData.eachItemMaterials[index].secondMaterial.GetComponent<Image>().sprite;
-        itemTableData.itemMaterials[1].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = GameManager.instance.data.resources[itemTableData.eachItemMaterials[index].secondMaterialIndex].ToString();
+        itemTableData.hugeIcon.GetComponent<Image>().sprite = itemTableData.items[index].transform.GetChild(1).GetComponent<Image>().sprite;//아이콘
+        itemTableData.hugeIcon.transform.GetChild(0).GetComponent<Text>().text = GameManager.instance.data.items[index].ToString();
+        itemTableData.itemMaterials[0].transform.GetChild(1).GetComponent<Image>().sprite = itemTableData.eachItemMaterials[index].firstMaterial.transform.GetChild(1).GetComponent<Image>().sprite;//아이콘
+        itemTableData.itemMaterials[0].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = GameManager.instance.data.resources[itemTableData.eachItemMaterials[index].firstMaterialIndex].ToString();//개수
+        itemTableData.itemMaterials[1].transform.GetChild(1).GetComponent<Image>().sprite = itemTableData.eachItemMaterials[index].secondMaterial.transform.GetChild(1).GetComponent<Image>().sprite;//아이콘
+        itemTableData.itemMaterials[1].transform.GetChild(0).GetChild(0).GetComponent<Text>().text = GameManager.instance.data.resources[itemTableData.eachItemMaterials[index].secondMaterialIndex].ToString();//개수
+    }
+    public void UpdateItemByIndex(int index)
+    {
+        itemTableData.items[index].transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text = GameManager.instance.data.items[index].ToString();
+    }
+    public void UpdateItem()
+    {
+        for (int i = 0; i < itemTableData.items.Length; i++)
+        {
+            UpdateItemByIndex(i);
+        }
     }
 }

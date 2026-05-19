@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public class PlayerData{
     public int[] resources = new int[11];
+    public int[] items = new int[5];
     public int[] upgrades = new int[5] {1,1,1,1,0};
     public int checkPoint;
 }

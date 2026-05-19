@@ -669,7 +669,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810874015}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PutingMaterial
+        m_MethodName: PutingItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -768,7 +768,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810874015}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PutingMaterial
+        m_MethodName: PutingItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1419,17 +1419,14 @@ MonoBehaviour:
     - {fileID: 1034937010}
   itemTableData:
     items:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    itemMaterials:
     - {fileID: 1066238513}
     - {fileID: 215268173}
     - {fileID: 239065215}
     - {fileID: 826198866}
     - {fileID: 1898743426}
+    itemMaterials:
+    - {fileID: 1997459513}
+    - {fileID: 1629325430}
     eachItemMaterials:
     - firstMaterial: {fileID: 339046928}
       firstMaterialIndex: 9
@@ -1451,7 +1448,7 @@ MonoBehaviour:
       firstMaterialIndex: 10
       secondMaterial: {fileID: 1506458762}
       secondMaterialIndex: 8
-    hugeIcon: {fileID: 0}
+    hugeIcon: {fileID: 1374219772}
 --- !u!1 &327154940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,14 +1954,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38a3ec1b758522442a828794991bc30c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2229,10 +2226,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8297a2bf97dbbba468bd2518d003a876, type: 3}
-    m_FontSize: 26
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3456,7 +3453,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 951065849}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99989015
+  m_Size: 0.9999988
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3883,6 +3880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonManager
   craftingMaterialIndex: -1
+  craftingItemIndex: 0
 --- !u!1 &826198866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6956653610301601863, guid: a2f01a8690eedd044a3f41e581769c9d, type: 3}
@@ -3961,7 +3959,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810874015}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PutingMaterial
+        m_MethodName: PutingItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4928,14 +4926,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38a3ec1b758522442a828794991bc30c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5891,7 +5889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000042819942}
+  m_AnchoredPosition: {x: 0, y: 0.000045640423}
   m_SizeDelta: {x: -19.670013, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1057369586
@@ -5993,7 +5991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066238517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 810874015}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: PutingItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066238517 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3833801228847166347, guid: a2f01a8690eedd044a3f41e581769c9d, type: 3}
@@ -7240,14 +7250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38a3ec1b758522442a828794991bc30c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7595,7 +7605,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1546320960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 810874015}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: CraftingItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1546320963
 Animator:
   serializedVersion: 7
@@ -9486,6 +9508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   data:
     resources: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    items: 0000000000000000000000000000000000000000
     upgrades: 0100000001000000010000000100000000000000
     checkPoint: 0
 --- !u!4 &1889824883
@@ -10032,7 +10055,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810874015}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PutingMaterial
+        m_MethodName: PutingItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
