@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     public CraftTableData craftTableData;
     public ItemTableData itemTableData;
+    public GameObject makeOneThing;
+    public GameObject makeTwoThing;
     private void Awake()
     {
         if(instance == null)

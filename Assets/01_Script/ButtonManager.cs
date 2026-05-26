@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager instance;
     public int craftingMaterialIndex;
     public int craftingItemIndex;
+    public GameObject MakeOneThingPanel;
+    public GameObject MakeTwoThingPanel;
     private void Awake()
     {
         if (instance == null)
@@ -31,7 +34,17 @@ public class ButtonManager : MonoBehaviour
             GameManager.instance.data.resources[craftingMaterialIndex + 1]++;
             int value = UnityEngine.Random.Range(0, 10);
             if (value < 3)
+            {
                 GameManager.instance.data.resources[9]++;
+                UIManager.instance.makeTwoThing.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[craftingMaterialIndex + 1].transform.GetChild(1).GetComponent<Image>().sprite;
+                UIManager.instance.makeTwoThing.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[9].transform.GetChild(1).GetComponent<Image>().sprite;
+                MakeTwoThingPanel.SetActive(true);
+            }
+            else
+            {
+                UIManager.instance.makeOneThing.transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[craftingMaterialIndex + 1].transform.GetChild(1).GetComponent<Image>().sprite;
+                MakeOneThingPanel.SetActive(true);
+            }
         }
         else if (craftingMaterialIndex % 3 == 1 && craftingMaterialIndex < 9 && GameManager.instance.data.resources[craftingMaterialIndex] >= 2)
         {
@@ -39,7 +52,17 @@ public class ButtonManager : MonoBehaviour
             GameManager.instance.data.resources[craftingMaterialIndex + 1]++;
             int value = UnityEngine.Random.Range(0, 10);
             if (value < 3)
+            {
                 GameManager.instance.data.resources[10]++;
+                UIManager.instance.makeTwoThing.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[craftingMaterialIndex + 1].transform.GetChild(1).GetComponent<Image>().sprite;
+                UIManager.instance.makeTwoThing.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[10].transform.GetChild(1).GetComponent<Image>().sprite;
+                MakeTwoThingPanel.SetActive(true);
+            }
+            else
+            {
+                UIManager.instance.makeOneThing.transform.GetChild(0).GetComponent<Image>().sprite = UIManager.instance.craftTableData.materials[craftingMaterialIndex + 1].transform.GetChild(1).GetComponent<Image>().sprite;
+                MakeOneThingPanel.SetActive(true);
+            }
         }
         else
         {
