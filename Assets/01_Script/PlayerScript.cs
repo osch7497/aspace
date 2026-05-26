@@ -46,7 +46,7 @@ public class PlayerScript : MonoBehaviour
 
             transform.Rotate(0, MouseMove.x, 0);//- аб©Л -
 
-        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, transform.forward * Move.z + transform.right * Move.x + transform.up * Move.y, Time.deltaTime * 10f);
+        rb.linearVelocity = Vector3.Lerp(rb.linearVelocity, transform.forward * Move.z + transform.right * Move.x + transform.up * Move.y, Time.deltaTime * 1f);
         RaycastHit ray;
         Debug.DrawRay(cam.transform.position, cam.transform.forward * 10f);
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out ray, 10f, ItemLayer)){
