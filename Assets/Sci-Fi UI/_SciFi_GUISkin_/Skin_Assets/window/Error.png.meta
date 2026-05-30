@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 55e7fefcb1252564e83b96186b0c9fdb
-AssetOrigin:
-  serializedVersion: 1
-  productId: 15606
-  packageName: Sci-fi GUI skin
-  packageVersion: 1.2
-  assetPath: Assets/Sci-Fi UI/_SciFi_GUISkin_/Skin_Assets/bars/bar_green1.png
-  uploadId: 217544
+guid: 52e589e8537852746b380f12196f0b06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
