@@ -9,10 +9,12 @@ public class ItemPickUpScript : MonoBehaviour{
     public Collider HitBox;
     public MeshRenderer Renderer;
     public VariousSFX pickUpSFX;
+    private Vector3 talantedRotationForce;
     public void Start()
     {
         HitBox = GetComponent<Collider>();
         Renderer = GetComponent<MeshRenderer>();
+        talantedRotationForce = new Vector3(Random.Range(-4.5f, 4.5f), Random.Range(-4.5f, 4.5f), Random.Range(-4.5f, 4.5f));
 
     }
     public int gather()
@@ -26,5 +28,8 @@ public class ItemPickUpScript : MonoBehaviour{
         transform.GetChild(0).GetComponent<ParticleSystem>().Emit(15);
         return returnResouces;
         
+    }
+    public void Update(){
+        transform.Rotate(talantedRotationForce * Time.deltaTime);
     }
 }
